@@ -23,7 +23,7 @@ public class GenericGeneticSolvingStrategy {
             int[] selected = new int[populationSize * 2];
             int sumScores = Arrays.stream(score).sum();
             for (int i = 0; i < selected.length; i++) {
-                int selectedScore = random.nextInt(sumScores);
+                int selectedScore = sumScores > 0 ? random.nextInt(sumScores) : 0;
                 for (int j = 0; j < populationSize; j++) {
                     if (selectedScore - score[j] <= 0) {
                         selected[i] = population[j];
