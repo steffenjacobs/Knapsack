@@ -1,9 +1,6 @@
 package me.steffenjacobs.knapsack;
 
-import me.steffenjacobs.knapsack.strategy.BruteForceStrategy;
-import me.steffenjacobs.knapsack.strategy.GeneticStrategy;
-import me.steffenjacobs.knapsack.strategy.GreedyStrategy;
-import me.steffenjacobs.knapsack.strategy.KnapsackStrategy;
+import me.steffenjacobs.knapsack.strategy.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +15,7 @@ public class Knapsack {
     }
 
     private void runStrategies() {
-        int itemCount = 25;
+        int itemCount = 26;
         int maxWeight = 25;
 
 
@@ -33,6 +30,7 @@ public class Knapsack {
         System.out.println();
 
 
+        executeStrategy(new RandomStrategy(), items, maxWeight);
         executeStrategy(new BruteForceStrategy(), items, maxWeight);
         executeStrategy(new GreedyStrategy(), items, maxWeight);
         executeStrategy(new GeneticStrategy(), items, maxWeight);
