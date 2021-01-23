@@ -11,7 +11,10 @@ There are three strategies included:
 ## Limitations
 
 - Brute Force Strategy gets slow fast (>28).
-- GeneticStrategy is limited to max. 31 items.
+- GeneticStrategy is limited to max. 16 items.
 
 ## Usage
 Call `Knapsack.main()`. Simply adjust the parameters in `Knapsack.java`.
+
+
+![Knapsack image](Knapsack.jpg)

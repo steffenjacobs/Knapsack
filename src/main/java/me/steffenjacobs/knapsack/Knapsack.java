@@ -18,7 +18,7 @@ public class Knapsack {
     }
 
     private void runStrategies() {
-        int itemCount = 25;
+        int itemCount = 16;
         int maxWeight = 25;
 
 
