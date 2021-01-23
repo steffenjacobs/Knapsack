@@ -4,7 +4,7 @@ This projects showcases a possible attempt to solve the knapsack problem in Java
 
 There are three strategies included:
 
-1. A random strategy that will generate solutions until one of a score >0 appears.
+1. A random strategy that will generate solutions until one of a score >0 appears (See `RandomStrategy.java`).
 2. A brute force strategy trying out all possible solutions (see `BruteForceStrategy.java`).
 3. A greedy strategy which selects all the highest value items until the weight limit is reached (`GreedyStrategy.java`).
 4. A genetic strategy which uses a evolutionary approach to select the best combination of items (`GeneticStrategy.java` and `GenericGeneticSolvingStrategy.java`).
