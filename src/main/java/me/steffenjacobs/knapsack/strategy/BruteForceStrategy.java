@@ -13,8 +13,8 @@ public class BruteForceStrategy implements  KnapsackStrategy{
 
         List<Item> topList = new ArrayList<>();
         int score = 0;
-        int numPerms = (int) Math.pow(2, items.size());
-        for (int bits = 0; bits < numPerms; bits++) {
+        long numPerms = (long) Math.pow(2, items.size());
+        for (long bits = 0; bits < numPerms; bits++) {
             List<Item> selection = KnapsackUtil.createPermutationFromBitvector(items, bits);
             int selScore = KnapsackUtil.score(selection, maxWeight);
             if (selScore > score) {

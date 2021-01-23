@@ -18,7 +18,7 @@ public class Knapsack {
     }
 
     private void runStrategies() {
-        int itemCount = 16;
+        int itemCount = 25;
         int maxWeight = 25;
 
 
@@ -26,7 +26,7 @@ public class Knapsack {
         for (int i = 0; i < itemCount; i++) {
             items.add(new Item(random.nextInt(10), random.nextInt(10)));
         }
-        System.out.printf("Generated (%s): ", items.size());
+        System.out.printf("Generated %s Items: ", items.size());
         for (Item i : items) {
             System.out.print(i.getPrice() + "/" + i.getWeight() + " ");
         }
@@ -46,7 +46,7 @@ public class Knapsack {
     }
 
     private void printResult(long millis, int maxWeight, List<Item> topList, String strategy) {
-        System.out.printf("%s -> Score: %s, Time: %s,  Weight: %s, Items (%s)%n", strategy,
+        System.out.printf("%s -> Score: %s, Time: %sms,  Weight: %s, Items (%s)%n", strategy,
                 KnapsackUtil.score(topList, maxWeight), millis, topList.stream().mapToDouble(Item::getWeight).sum(),
                 topList.size());
         for (Item i : topList) {

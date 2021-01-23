@@ -1,6 +1,7 @@
 package me.steffenjacobs.knapsack;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.List;
 
 public class KnapsackUtil {
@@ -8,11 +9,21 @@ public class KnapsackUtil {
         throw new UnsupportedOperationException("Singleton");
     }
 
-    public static List<Item> createPermutationFromBitvector(List<Item> items, int bitFilter) {
+    public static List<Item> createPermutationFromBitvector(List<Item> items, long bitFilter) {
         List<Item> selection = new ArrayList<>();
         for (int j = 0; j < items.size(); ++j) {
-            int b = ((bitFilter >> j) & 1);
+            long b = ((bitFilter >> j) & 1);
             if (b != 0) {
+                selection.add(items.get(j));
+            }
+        }
+        return selection;
+    }
+
+    public static List<Item> createPermutationFromBitvector(List<Item> items, BitSet bitFilter) {
+        List<Item> selection = new ArrayList<>();
+        for (int j = 0; j < items.size(); ++j) {
+            if (bitFilter.get(j)) {
                 selection.add(items.get(j));
             }
         }
